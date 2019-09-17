@@ -85,7 +85,6 @@ public class BasicConsumeLoop<K extends Serializable, V extends Serializable> im
 				}
 			};
 			consumer.subscribe(topics, listener);
-
 			logger.info("C : {}, Started to process records", clientId);
 			while(true) {
 				ConsumerRecords<K, V> records = consumer.poll(Long.MAX_VALUE);
